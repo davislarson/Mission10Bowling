@@ -1,3 +1,4 @@
+// Type definitions for bowlerInfo based on the ViewModel of the backend BowlingLeague database
 export type bowlerInfo = {
   id: number;
   bowlerId: number;

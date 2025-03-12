@@ -2,8 +2,10 @@ import { bowlerInfo } from '../types/bowlerInfo';
 import { useState, useEffect } from 'react';
 
 function TeamList() {
+  // Keep state for all the bowlers in the league
   const [bowlers, setBowlers] = useState<bowlerInfo[]>([]);
 
+  // This will call the backend to get all the bowlers
   useEffect(() => {
     const fetchTeams = async () => {
       const res = await fetch('https://localhost:7286/BowlingLeague');
@@ -13,6 +15,7 @@ function TeamList() {
     fetchTeams();
   }, []);
 
+  // This will filter the bowlers to only show the Marlins and Sharks
   const filteredBowlers = bowlers.filter((bowler) => bowler.teamName === 'Marlins' || bowler.teamName === 'Sharks');
 
   return (
