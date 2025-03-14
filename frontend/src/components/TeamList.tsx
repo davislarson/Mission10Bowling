@@ -8,7 +8,7 @@ function TeamList() {
   // This will call the backend to get all the bowlers
   useEffect(() => {
     const fetchTeams = async () => {
-      const res = await fetch('https://localhost:7286/BowlingLeague');
+      const res = await fetch('https://localhost:5000/BowlingLeague');
       const data = await res.json();
       setBowlers(data);
     };
